@@ -6,6 +6,7 @@ public class App {
         // 拡張for文でやってみる
         for(String n: names){
             // 大文字にしてみる
+            // test
             System.out.println(n.toUpperCase() + "ゲットだぜ");
         }
     }
