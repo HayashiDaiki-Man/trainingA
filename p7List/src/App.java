@@ -1,14 +1,13 @@
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
+/*import java.time.LocalDate;
+import java.util.ArrayList;*/
+import java.util.List;
 
-import javax.xml.crypto.Data;
 
 public class App {
     public static void main(String[] args) {
         // 変更可能なArrayList
         // ジェネリクス<>はString型
-        var authors = new ArrayList<String>();
+     /*   var authors = new ArrayList<String>();
         // 追加
         authors.add("yamamoto");
         authors.add("hayashi");
@@ -27,6 +26,10 @@ public class App {
         var dates = new ArrayList<LocalDate>();
         var d = LocalDate.now();
         dates.add(d);
-        System.out.println(dates);
+        System.out.println(dates); */
+        var names = List.of("tt","gg","ll");
+        var n = names.get(0);
+        System.out.println(n.toUpperCase());
+
     }
 }
