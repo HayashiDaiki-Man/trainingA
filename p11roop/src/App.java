@@ -1,7 +1,8 @@
-
 public class App {
     public static void main(String[] args) throws Exception {
         record Position(int x,int y){}
+        /* int型の多次元配列を用意、[][]の数が次元を表す
+        なのでこの場合は2次元配列 */
         int[][] map = {
             {1,1,1,1,1,1},
             {1,0,1,0,0,1},
@@ -9,8 +10,8 @@ public class App {
             {1,0,1,0,0,1},
             {1,1,1,1,1,1}
         };
-        var current = new Position(1,1);
-         var goal = new Position(4, 3);
+        var current = new Position(1,3);
+         var goal = new Position(4, 1);
          for(;;){
             //  迷路の表示
             for(int y = 0; y < map.length;y++){
