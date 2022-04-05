@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,7 @@
             <label>タスク</label>
             <input type="text" name="task">
             <label>期限</label>
-            <input type="date" name="text">
+            <input type="date" name="deadline">
             <input type="submit" value="登録">
         </form>
     </div>
@@ -31,9 +31,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="task : ${tskList}">
+                <tr th:each="task : ${taskList}">
                     <td class="hidden" th:text="${task.id}"></td>
-                    <!-- もしかしてtskかも -->
                     <td th:text="${task.task}"></td>
                     <td width="100px" th:text="${task.deadline}"></td>
                     <td width="50px" th:text="${task.done} ? '完了':'未完了'"></td>
