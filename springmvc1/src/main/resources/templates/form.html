@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+
+<body>
+    <!-- formにバインドするオブジェクトをuserと設定している -->
+    <form th:action="@{/form}" th:object="${user}" method="post">
+        <!-- th:fieldはHTMLに出力する機能 -->
+        <label for="name">氏名：</label>
+        <input type="text" th:field="*{name}"><br>
+
+        <label for="email">E-Mail：</label>
+        <input type="email" th:field="*{email}"><br>
+
+        <label for="age">年齢：</label>
+        <input type="number" th:field="*{age}"><br>
+
+        <button>送信</button>
+    </form>
+</body>
+
+</html>
