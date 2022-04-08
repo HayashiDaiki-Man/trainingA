@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h4 class="border-bottom my-3" th:text="#{inquiry}">
+                </h4>
+
+                <form th:action="@{/}" th:object="${inquiry}" method="post" novalidate>
+                    <div class="mb-3">
+                        <label for="name" th:text="#{name}"></label>
+                        <!-- 続きここから 4/8 -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
