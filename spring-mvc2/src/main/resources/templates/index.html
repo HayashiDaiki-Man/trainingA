@@ -17,18 +17,18 @@
 
                 <form th:action="@{/}" th:object="${inquiry}" method="post" novalidate>
                     <div class="mb-3">
-                        <label for="name" th:text="#{name}"></label>
-                        <input type="text" class="form-controll" th:errorclass="is-invaled" th:field="*{name}">
+                        <label for="name" th:text="#{name}"></label><br>
+                        <input type="text" class="form-controll" th:errorclass="is-invalid" th:field="*{name}">
                         <div class="invalid-feedback" th:errors="*{name}"></div>
                     </div>
                     <div class="mb-3">
-                        <label for="email" th:text="#{email}"></label>
-                        <input type="email" class="form-controll" th:errorclass="is-invaled" th:field="*{email}">
+                        <label for="email" th:text="#{email}"></label><br>
+                        <input type="email" class="form-controll" th:errorclass="is-invalid" th:field="*{email}">
                         <div class="invalid-feedback" th:errors="*{email}"></div>
                     </div>
                     <div class="mb-3">
-                        <label for="inquiry" th:text="#{inquiry}"></label>
-                        <textarea class="form-controll" rows="3" th:errorclass="is-invaled" th:field="*{inquiry}"></textarea>
+                        <label for="inquiry" th:text="#{inquiry}"></label><br>
+                        <textarea class="form-controll" rows="3" th:errorclass="is-invalid" th:field="*{inquiry}"></textarea>
                         <div class="invalid-feedback" th:errors="*{inquiry}"></div>
                     </div>
 
