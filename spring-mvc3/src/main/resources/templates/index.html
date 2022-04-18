@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <title>Document</title>
+</head>
+
+<body class="bg-light">
+    <div class="cont">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h4 class="border-bottom my-3" th:text="#{invoice}"></h4>
+                <!-- form -->
+                <form th:action="@{/}" th:object="${invoice}" method="post" novalidate>
+                    <div class="mb-3">
+                        <label for="name" th:text="#{name}"></label>
+                        <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{name}">
+                        <div class="invalid-feedback" th:errors="*{name}"></div>
+                    </div>
+                    <!-- next 4/18 -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
