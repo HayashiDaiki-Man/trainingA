@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="paymentDeadline"></label>
+                        <label for="paymentDeadline" th:text="#{paymentDeadline}"></label>
                         <input type="date" class="form-control" th:errorclass="is-invalid"
                             th:field="*{paymentDeadline}">
                         <div class="invalid-feedback" th:errors="*{paymentDeadline}"></div>

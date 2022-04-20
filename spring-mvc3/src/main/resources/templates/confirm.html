@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
     <title>Document</title>
 </head>
+
 <body class="bg-light">
     <div class="container">
         <div class="row justify-content-center">
@@ -15,14 +17,37 @@
                 <div th:object="${invoice}">
 
                     <div class="mb-3">
+                        <!-- ${invoice}の name を出力している #{name} -->
                         <label for="name" th:text="#{name}"></label>
-                        <input type="text" class="form-control" th:field="*{name}">
-                        <!-- 4/18 next -->
+                        <!-- ${invoice}の name を参照している *{name} -->
+                        <input type="text" class="form-control" th:field="*{name}" disabled>
+
+                        <div class="mb-3">
+                            <label for="address" th:text="#{address}"></label>
+                            <input type="text" class="form-control" th:field="*{address}" disabled>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phoneNumber" th:text="#{phoneNumber}"></label>
+                            <input type="tel" class="form-control" th:field="*{phoneNumber}" disabled>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="price" th:text="#{price}"></label>
+                            <input type="text" class="form-control" th:field="*{price}" disabled>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="paymentDeadline" th:text="#{paymentDeadline}"></label>
+                            <input type="date" class="form-control" th:field="*{paymentDeadline}">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
+
 </html>
