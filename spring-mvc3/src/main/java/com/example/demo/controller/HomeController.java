@@ -18,6 +18,12 @@ public class HomeController {
     }
 
     @PostMapping("/")
+    /**
+     * validationで検証した値を
+     * bindingresultが拾って
+     * hasErrors()でエラーかどうかチェック
+     * エラーであればindexを返す
+     */
     public String confirm(@Validated @ModelAttribute Invoice invoice, BindingResult result) {
         if (result.hasErrors()) {
             return "index";
