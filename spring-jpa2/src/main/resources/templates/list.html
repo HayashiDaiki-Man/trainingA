@@ -8,8 +8,9 @@
 </head>
 
 <body>
-    <form action="@{/add}" th:object="${comment}" method="post">
+    <form th:action="@{/add}" th:object="${comment}" method="post">
         <label for="content">コメント：</label>
+        <input type="text" th:field="*{content}">
         <button>登録</button>
         <br>
         <small style="color: red;" th:errors="*{content}"></small>
