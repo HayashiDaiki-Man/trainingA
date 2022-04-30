@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.RequiredArgsConstructor;
@@ -39,5 +40,15 @@ public class EmployeeController {
         return "redirect:/";
     }
 
-    // 4/30 next
+    @GetMapping("/edit/{id}")
+    public String editEmployee(@PathVariable Long id, Model model) {
+        model.addAttribute("employee", repository.findById(id));
+        return "form";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteEmployee(@PathVariable Long id) {
+        repository.deleteById(id);
+        return "redirect:/";
+    }
 }
