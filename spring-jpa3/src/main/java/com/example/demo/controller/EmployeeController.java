@@ -1,11 +1,43 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.Employee;
+import com.example.demo.repository.EmployeeRepository;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
 public class EmployeeController {
-    // 4/27 next
+
+    private final EmployeeRepository repository;
+
+    @GetMapping("/")
+    public String showList(Model model) {
+        model.addAttribute("employee", repository.findAll());
+        return "index";
+    }
+
+    @GetMapping("/add")
+    public String addEmployee(@ModelAttribute Employee employee) {
+        return "form";
+    }
+
+    @PostMapping("/process")
+    public String process(@Validated @ModelAttribute Employee employee, BindingResult result) {
+        if (result.hasErrors()) {
+            return "form";
+        }
+        repository.save(employee);
+        return "redirect:/";
+    }
+
+    // 4/30 next
 }
