@@ -22,7 +22,7 @@ public class EmployeeController {
 
     @GetMapping("/")
     public String showList(Model model) {
-        model.addAttribute("employee", repository.findAll());
+        model.addAttribute("employees", repository.findAll());
         return "index";
     }
 
