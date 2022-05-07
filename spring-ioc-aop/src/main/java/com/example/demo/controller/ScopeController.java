@@ -1,0 +1,25 @@
+package com.example.demo.controller;
+
+import com.example.demo.repository.CoffeeRepository;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import lombok.RequiredArgsConstructor;
+
+@Scope
+@RequiredArgsConstructor
+@Controller
+public class ScopeController {
+
+	private final CoffeeRepository repository;
+
+	@GetMapping("/socpe")
+	public String showList(Model model) {
+		model.addAttribute("toString", this.toString());
+		model.addAttribute("allCoffee", repository.findAll());
+		return "index";
+	}
+}
