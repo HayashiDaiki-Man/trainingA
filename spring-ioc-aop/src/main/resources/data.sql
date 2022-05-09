@@ -1,2 +1,2 @@
-insert into coffee(id name)
-values (1,'ブレンドコーヒー'),(2,'ジャワコーヒー');
+INSERT INTO coffee(id, name)
+VALUES (1, 'ブレンドコーヒー'),(2, 'ジャワコーヒー');

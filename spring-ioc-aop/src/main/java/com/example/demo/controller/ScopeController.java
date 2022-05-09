@@ -16,7 +16,7 @@ public class ScopeController {
 
 	private final CoffeeRepository repository;
 
-	@GetMapping("/socpe")
+	@GetMapping("/scope")
 	public String showList(Model model) {
 		model.addAttribute("toString", this.toString());
 		model.addAttribute("allCoffee", repository.findAll());
